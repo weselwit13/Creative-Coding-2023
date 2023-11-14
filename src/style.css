@@ -1,0 +1,215 @@
+#body {
+    margin: 0;
+    padding: 0;
+    background-color: #FFCE32;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+@font-face {
+    font-family: "Neue Machina";
+    src: url("Font/PPNeueMachina-InktrapRegular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Neue Machina";
+    src: url("Font/PPNeueMachina-InktrapUltrabold.otf") format("opentype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+#h1 {
+    color: #37366F;
+    margin-top: 10px;
+    margin-left: 20px;
+    text-align: left;
+    font-size: 61px;
+    font-family: 'Neue Machina', Courier, monospace;
+    font-weight: bold;
+
+}
+
+#h2 {
+    color: #37366F;
+    margin-top: 40px;
+    margin-left: 20px;
+    text-align: left;
+    font-size: 20px;
+    font-family: 'Neue Machina', Courier, monospace;
+    font-weight: bold;
+
+}
+
+#flex {
+    color: #37366F;
+    margin-top: 10px;
+    margin-left: 20px;
+    text-align: left;
+    font-size: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: 'Neue Machina';
+}
+
+#label_left {
+    color: #37366F;
+    margin-top: 10px;
+    margin-left: 20px;
+    text-align: left;
+    font-size: 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: 'Neue Machina';
+}
+
+#label_right {
+    color: #37366F;
+    margin-top: -21px;
+    margin-left: 350px;
+    text-align: right;
+    font-size: 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: 'Neue Machina';
+}
+
+#button {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #37366F;
+    border-radius: 20px;
+    color: #37366F;
+    font-size: 15px;
+    height: 35px;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+}
+
+#button2 {
+    margin-left: 0px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #37366F; /* Imposta il colore di sfondo */
+    color: #FFFFFF; /* Imposta il colore del testo */
+    font-size: 15px;
+    height: 35px;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+}
+
+#slider-container
+#slider-b {
+    position: relative;
+}
+
+#current-value {
+    position: absolute;
+    margin-top: -30px;
+    transform: translateX(50%);
+    color: #37366F;
+    font-size: 15px;
+    font-family: 'Neue Machina';
+}
+
+input[type="range"] {
+    margin-left: 20px;
+    margin-top: 30px;
+    width: 370px;
+    display: block;
+    background-color: #37366F;
+    border: none;
+    height: 3px;
+    border-radius: 5px;
+    outline: none;
+    appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    --thumb-width: 5px;
+    /* Modifica la larghezza del pollice dello slider se necessario */
+    -webkit-appearance: none;
+    width: var(--thumb-width);
+    height: 15px;
+    background-color: #37366F;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#label_leftb {
+    color: #37366F;
+    margin-top: 10px;
+    margin-left: 160px;
+    text-align: left;
+    font-size: 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: 'Neue Machina';
+}
+
+#label_rightb {
+    color: #37366F;
+    margin-top: -16px;
+    margin-left: 255px;
+    text-align: right;
+    font-size: 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: 'Neue Machina';
+}
+
+#current-valueb {
+    position: absolute;
+    margin-top: -30px;
+    color: #37366F;
+    font-size: 15px;
+    font-family: 'Neue Machina';
+    transform: translateX(1600%);
+}
+
+#chapter[type="range"] {
+    margin-left: 160px;
+    margin-top: -10px;
+    width: 100px;
+    display: block;
+    background-color: #37366F;
+    border: none;
+    height: 3px;
+    border-radius: 5px;
+    outline: none;
+    appearance: none;
+}
+
+#chapter[type="range"]::-webkit-slider-thumb {
+    --thumb-width: 5px;
+    /* Modifica la larghezza del pollice dello slider se necessario */
+    -webkit-appearance: none;
+    width: var(--thumb-width);
+    height: 15px;
+    background-color: #37366F;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
