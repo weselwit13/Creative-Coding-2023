@@ -118,11 +118,11 @@ input[type="range"] {
 }
 
 input[type="range"]::-webkit-slider-thumb {
-    --thumb-width: 5px;
+    --thumb-width: 15px;
     /* Modifica la larghezza del pollice dello slider se necessario */
     -webkit-appearance: none;
     width: var(--thumb-width);
-    height: 15px;
+    height: 20px;
     background-color: #37366F;
     border: none;
     border-radius: 20px;
@@ -204,11 +204,11 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 #chapter[type="range"]::-webkit-slider-thumb {
-    --thumb-width: 5px;
+    --thumb-width: 15px;
     /* Modifica la larghezza del pollice dello slider se necessario */
     -webkit-appearance: none;
     width: var(--thumb-width);
-    height: 15px;
+    height: 20px;
     background-color: #37366F;
     border: none;
     border-radius: 20px;
