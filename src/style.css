@@ -35,7 +35,7 @@
 
 #h2 {
     color: #37366F;
-    margin-top: 40px;
+    margin-top: 30px;
     margin-left: 20px;
     text-align: left;
     font-size: 20px;
@@ -50,32 +50,6 @@
     margin-left: 20px;
     text-align: left;
     font-size: 20px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-    font-family: 'Neue Machina';
-}
-
-#label_left {
-    color: #37366F;
-    margin-top: 10px;
-    margin-left: 20px;
-    text-align: left;
-    font-size: 15px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-    font-family: 'Neue Machina';
-}
-
-#label_right {
-    color: #37366F;
-    margin-top: -21px;
-    margin-left: 350px;
-    text-align: right;
-    font-size: 15px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -133,7 +107,7 @@
 input[type="range"] {
     margin-left: 20px;
     margin-top: 30px;
-    width: 370px;
+    width: 350px;
     display: block;
     background-color: #37366F;
     border: none;
@@ -153,6 +127,32 @@ input[type="range"]::-webkit-slider-thumb {
     border: none;
     border-radius: 20px;
     cursor: pointer;
+}
+
+#label_left {
+    color: #37366F;
+    margin-top: 10px;
+    margin-left: 20px;
+    text-align: left;
+    font-size: 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: 'Neue Machina';
+}
+
+#label_right {
+    color: #37366F;
+    margin-top: -21px;
+    margin-left: 320px;
+    text-align: right;
+    font-size: 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: 'Neue Machina';
 }
 
 #label_leftb {
