@@ -17,16 +17,15 @@ slider.addEventListener('input', function() {
 
 });
 
-slider2.addEventListener('input', function() {
-    const min = parseInt(this.min);
-    const max = parseInt(this.max);
-    const percent = ((this.value - min) / (max - min)) * 100;
+// slider2.addEventListener('input', function() {
+//     const min = parseInt(this.min);
+//     const max = parseInt(this.max);
+//     const percent = ((this.value - min) / (max - min)) * 100;
 
-    const thumbWidth = parseFloat(getComputedStyle(this).getPropertyValue('--thumb-width')) || 15;
-    const thumbPosition = (percent / 100) * (this.offsetWidth - thumbWidth);
+//     const thumbWidth = parseFloat(getComputedStyle(this).getPropertyValue('--thumb-width')) || 15;
+//     const thumbPosition = (percent / 100) * (this.offsetWidth - thumbWidth);
 
-    currentValue2.textContent = this.value;
-    currentValue2.style.left = `calc(${thumbPosition}px - ${thumbWidth / 2}px )`;
-    currentValue2.style.transform = 'translateX(1650%)'
+//     currentValue2.textContent = this.value;
+//     currentValue2.style.left = `calc(${thumbPosition}px - ${thumbWidth / 2}px )`;
 
-});
+// });

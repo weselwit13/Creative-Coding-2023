@@ -2,12 +2,19 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=body-width, initial-scale=1.0">
+    <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--<meta name="viewport" content="width=body-width, initial-scale=1.0">-->
     <link href="src/style.css" rel="stylesheet" />
     <title>Your WalkStory_home_page</title>
 </head>
 
 <body id="body">
+    <div id="detail""><button id="close">close</button>
+    <div id="h1">Your story begins</div>
+    <div id="generatedText"></div>
+    <span id="button2" onclick="nextChapter()">CONTIUNE THE STORY</span>
+    <span id="button3" onclick="finishStory()">FINISH THE STORY</span>
+    </div>
     <h2 id="h2">
         WalkStory
     </h2>
@@ -16,17 +23,17 @@
         What story is yours today?
     </h1>
     <div id="flex">
-        TELL ME A 
-        <span id="button">DETECTIVE</span>
-        <span id="button">NOVEL</span>
-        <span id="button">ROMANCE</span>
-        <span id="button">THRILLER</span>
-        <span id="button">HORROR</span>
-        <span id="button">ADVENTURE</span>
-        <span id="button">FANTASY</span>
-        <span id="button">MISTERY</span>
-        <span id="button">DISTOPIC</span>
-        <span id="button">DRAMA</span>
+        TELL ME A
+        <span class="button gen">DETECTIVE</span>
+        <span class="button gen">ROMANCE</span>
+        <span class="button gen">THRILLER</span>
+        <span class="button gen">HORROR</span>
+        <span class="button gen">NOVEL</span>
+        <span class="button gen">ADVENTURE</span>
+        <span class="button gen">FANTASY</span>
+        <span class="button gen">MISTERY</span>
+        <span class="button gen">DISTOPIC</span>
+        <span class="button gen">DRAMA</span>
     </div>
     <div id="flex">
         STORY, SET IN THE
@@ -37,26 +44,14 @@
         <span id="label_left">1000's</span>
         <span id="label_right">3000's</span>
     </div>
-    <section>
-        <div id="flex" style="float: right; margin-right: 10px;">
-            CHAPTERS.
-        </div>
+    <p id="address"></p>
     <div id="flex">
-        DIVIDED IN
-    </div>
-    <div class="flex slider-b">
-        <input type="range" id="chapter" name="chapter" min="2" max="6" step="1" value="1">
-        <span id="current-valueb">2</span>
-        <span id="label_leftb">2</span>
-        <span id="label_rightb">6</span>
-    </div>
-</section>
-    <div id="flex">
-        <span id="button2">START WALKING!</span>
+        <span id="button2" onclick="getCurrentLocation()">START WALKING!</span>
     </div>
 
 </body>
-
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="src/app_1.js"></script>
 <script src="src/app.js"></script>
 
 </html>

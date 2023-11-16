@@ -21,6 +21,28 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "Neue Machina";
+    src: url("Font/PPNeueMachina-PlainLight.otf") format("opentype");
+    font-weight: lighter;
+    font-style: normal;
+}
+
+#detail {
+position: fixed;
+left: 100%;
+top: 0;
+width: 100%;
+height: 100%;
+background-color: #FFCE32;
+z-index: 10;
+transition: all 700ms;
+
+}
+#detail.active {
+    left: 0;
+}
+
 #h1 {
     color: #37366F;
     margin-top: 10px;
@@ -57,78 +79,6 @@
     font-family: 'Neue Machina';
 }
 
-#button {
-    margin-left: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #37366F;
-    border-radius: 20px;
-    color: #37366F;
-    font-size: 15px;
-    height: 35px;
-    padding-left: 20px;
-    padding-right: 20px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    cursor: pointer;
-}
-
-#button2 {
-    margin-left: 0px;
-    margin-bottom: 10px;
-    border: none;
-    border-radius: 20px;
-    background-color: #37366F; /* Imposta il colore di sfondo */
-    color: #FFFFFF; /* Imposta il colore del testo */
-    font-size: 15px;
-    height: 35px;
-    padding-left: 20px;
-    padding-right: 20px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    cursor: pointer;
-}
-
-#slider-container
-#slider-b {
-    position: relative;
-}
-
-#current-value {
-    position: absolute;
-    margin-top: -30px;
-    transform: translateX(50%);
-    color: #37366F;
-    font-size: 15px;
-    font-family: 'Neue Machina';
-}
-
-input[type="range"] {
-    margin-left: 20px;
-    margin-top: 30px;
-    width: 350px;
-    display: block;
-    background-color: #37366F;
-    border: none;
-    height: 3px;
-    border-radius: 5px;
-    outline: none;
-    appearance: none;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-    --thumb-width: 15px;
-    /* Modifica la larghezza del pollice dello slider se necessario */
-    -webkit-appearance: none;
-    width: var(--thumb-width);
-    height: 20px;
-    background-color: #37366F;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
 #label_left {
     color: #37366F;
     margin-top: 10px;
@@ -145,7 +95,7 @@ input[type="range"]::-webkit-slider-thumb {
 #label_right {
     color: #37366F;
     margin-top: -21px;
-    margin-left: 320px;
+    margin-left: 350px;
     text-align: right;
     font-size: 15px;
     display: flex;
@@ -153,6 +103,123 @@ input[type="range"]::-webkit-slider-thumb {
     align-items: center;
     flex-wrap: wrap;
     font-family: 'Neue Machina';
+}
+
+#close {
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #37366F;
+    border-radius: 20px;
+    color: #37366F;
+    font-size: 15px;
+    height: 35px;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    font-family: 'Neue Machina';
+}
+
+.button {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #37366F;
+    border-radius: 20px;
+    color: #37366F;
+    font-size: 15px;
+    height: 35px;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+  }
+  
+  .button.clicked {
+    background-color: #37366F;
+    color: white;
+  }  
+
+#button2 {
+    margin-left: 0px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #37366F; /* Imposta il colore di sfondo */
+    color: #FFFFFF; /* Imposta il colore del testo */
+    font-size: 15px;
+    height: 35px;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    font-family: 'Neue Machina';
+}
+#button3 {
+    margin-left: 0px;
+    margin-bottom: 10px;
+    border: 1px solid #37366F;
+    border-radius: 20px;
+    border-color: #37366F; /* Imposta il colore di sfondo */
+    color: #FFFFFF; /* Imposta il colore del testo */
+    font-size: 15px;
+    height: 35px;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    font-family: 'Neue Machina';
+}
+
+#slider-container
+#slider-b {
+    position: relative;
+}
+
+#address{
+    display: none;
+}
+
+#current-value {
+    position: absolute;
+    margin-top: -30px;
+    transform: translateX(50%);
+    color: #37366F;
+    font-size: 15px;
+    font-family: 'Neue Machina';
+}
+
+input[type="range"] {
+    margin-left: 20px;
+    margin-top: 30px;
+    width: 370px;
+    display: block;
+    background-color: #37366F;
+    border: none;
+    height: 3px;
+    border-radius: 5px;
+    outline: none;
+    appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    --thumb-width: 5px;
+    /* Modifica la larghezza del pollice dello slider se necessario */
+    -webkit-appearance: none;
+    width: var(--thumb-width);
+    height: 15px;
+    background-color: #37366F;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
 }
 
 #label_leftb {
@@ -204,13 +271,22 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 #chapter[type="range"]::-webkit-slider-thumb {
-    --thumb-width: 15px;
+    --thumb-width: 5px;
     /* Modifica la larghezza del pollice dello slider se necessario */
     -webkit-appearance: none;
     width: var(--thumb-width);
-    height: 20px;
+    height: 15px;
     background-color: #37366F;
     border: none;
     border-radius: 20px;
     cursor: pointer;
+}
+
+#generatedText {
+    font-family: 'Neue Machina';
+    font-style: lighter;
+    color: #37366F;
+    width: 80%;
+    margin-left: 20px;
+    margin-top: 20px;
 }
