@@ -191,7 +191,7 @@ async function cohereGeneratePrompt(sentence) {
 //IA Lettura testo
 async function speak(generatedText) {
   const text = generatedText;
-  const voiceId = "lbbVIvgn0P8ANytXDFTw";
+  const voiceId = "21m00Tcm4TlvDq8ikWAM";
 
   const headers = new Headers();
   headers.append("Accept", "audio/mpeg");
