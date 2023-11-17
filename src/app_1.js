@@ -7,6 +7,8 @@ const elevenLabsTtsEndpoint = 'https://api.eleven-labs.com/v1/tts';
 let chatHistory = [];
 let temp = "";
 
+let anim = true;
+
 let generatedText = document.getElementById("generatedText")
 
 //bottoni genere storia
@@ -39,18 +41,38 @@ yearSlider.addEventListener("input", function () {
   console.log("Selected year:", selectedYear);
 });
 
-
+//tasto chiusura storia
 let detail = document.querySelector("#detail")
 let close = document.querySelector("#close");
 close.addEventListener("click", () => {
   detail.classList.remove("active")
 })
 
+const loadingDots = document.getElementById('loadingDots');
+
+let intervalId; 
+const dots = document.querySelectorAll('.dot');
+
+// Funzione per animare i puntini
+function animateDots() {
+  if (anim) {
+    function toggleDots() {
+      dots.forEach(dot => dot.classList.toggle('active'));
+    }
+  
+    intervalId = setInterval(toggleDots, 1500);
+
+  } else {
+    clearInterval(intervalId);
+
+    dots.forEach(dot => dot.classList.remove('active'));
+  }
+}
+
 // Funzione per ottenere la posizione attuale
 async function getCurrentLocation() {
-
+  animateDots()
   detail.classList.add("active")
-
 
   if ("geolocation" in navigator) {
 
@@ -83,6 +105,7 @@ async function getCurrentLocation() {
         const generatedText = await cohereGeneratePrompt(prompt + ".max 50 words.");
         console.log(generatedText);
 
+
         // Aggiorna il testo generato nel documento HTML
         document.getElementById("generatedText").textContent = generatedText;
         // Leggi il testo generato ad alta voce con ElevenLabs TTS
@@ -103,7 +126,7 @@ async function cohereGeneratePrompt(sentence) {
   const data = JSON.stringify({
     "model": "command-nightly",
     "prompt": sentence,
-    "max_tokens": 200,
+    "max_tokens": 130,
     "temperature": 0.9,
     "k": 0,
     "stop_sequences": [],
@@ -112,6 +135,8 @@ async function cohereGeneratePrompt(sentence) {
 
   //Velocità con cui appare il testo
   function animateGeneratedText(text, element, index = 0) {
+
+
     // Clear the existing content before appending
     element.innerHTML = '';
 
@@ -119,6 +144,7 @@ async function cohereGeneratePrompt(sentence) {
       if (index < text.length) {
         element.innerHTML += text.charAt(index);
         index++;
+        anim = false;
         setTimeout(appendNextChar, 0);
       }
     }
@@ -272,7 +298,6 @@ async function nextChapter() {
 async function finishStory() {
 
   detail.classList.add("active")
-
 
   if ("geolocation" in navigator) {
 
