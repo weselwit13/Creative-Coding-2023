@@ -4,7 +4,15 @@ const COHERE_KEY = 'kJwxouHb0UCaLkZxcXXc8ZrUUmho1P8OCM6WmW4t';
 // API endpoint and key for ElevenLabs
 const elevenLabsApiKey = '09e0412b622854547349881601b64986';
 const elevenLabsTtsEndpoint = 'https://api.eleven-labs.com/v1/tts';
-let chatHistory = [];
+
+navigator.mediaDevices.getUserMedia({ audio: true })
+    .then(function (stream) {
+        // L'utente ha dato il permesso, puoi ora riprodurre l'audio
+    })
+    .catch(function (err) {
+        console.error('Errore nel richiedere il permesso audio:', err);
+    });
+
 let temp = "";
 
 let anim = true;
@@ -224,6 +232,7 @@ async function speak(generatedText) {
     const blob = await response.blob();
     const url = window.URL.createObjectURL(blob);
     const audio = new Audio(url);
+    audio.current.playsInline = true;
     audio.play();
     audio.onended = () => {
       // Handle completion if needed
