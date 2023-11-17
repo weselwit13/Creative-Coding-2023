@@ -5,8 +5,8 @@ const COHERE_KEY = 'kJwxouHb0UCaLkZxcXXc8ZrUUmho1P8OCM6WmW4t';
 const elevenLabsApiKey = 'd86fcea048b77c31dbfbb9ad37e2a331';
 const elevenLabsTtsEndpoint = 'https://api.eleven-labs.com/v1/tts';
 
-document.getElementById("speakButton").addEventListener("click", function () {
-  speak(generatedText);
+document.getElementById("button").addEventListener("click", function () {
+  speak(generatedText.textContent);
 });
 
 let temp = "";
@@ -195,6 +195,7 @@ async function cohereGeneratePrompt(sentence) {
 //IA Lettura testo
 async function speak(generatedText) {
   const text = generatedText;
+  console.log(text);
   const voiceId = "0xGfbfTuAfj8JSR2Leff";
 
   const headers = new Headers();
