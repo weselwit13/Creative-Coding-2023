@@ -13,6 +13,16 @@ navigator.mediaDevices.getUserMedia({ audio: true })
         console.error('Errore nel richiedere il permesso audio:', err);
     });
 
+    const express = require('express');
+const app = express();
+
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*'); // Consenti a tutti i domini di accedere all'audio
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+});
+
+
 let temp = "";
 
 let anim = true;
