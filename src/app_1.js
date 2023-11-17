@@ -2,7 +2,7 @@
 const cohereUrl = 'https://api.cohere.ai/v1/generate';
 const COHERE_KEY = 'kJwxouHb0UCaLkZxcXXc8ZrUUmho1P8OCM6WmW4t';
 // API endpoint and key for ElevenLabs
-const elevenLabsApiKey = '7e3f3d6ca1b824bceb1a727f107eaac7';
+const elevenLabsApiKey = 'b01e100c3acb6f7da1ca0485296de6b2';
 const elevenLabsTtsEndpoint = 'https://api.eleven-labs.com/v1/tts';
 let chatHistory = [];
 let temp = "";
@@ -191,7 +191,7 @@ async function cohereGeneratePrompt(sentence) {
 //IA Lettura testo
 async function speak(generatedText) {
   const text = generatedText;
-  const voiceId = "vbq5nHLriIX1ZQTz1gR2";
+  const voiceId = "lbbVIvgn0P8ANytXDFTw";
 
   const headers = new Headers();
   headers.append("Accept", "audio/mpeg");
