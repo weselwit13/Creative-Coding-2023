@@ -2,7 +2,7 @@
 const cohereUrl = 'https://api.cohere.ai/v1/generate';
 const COHERE_KEY = 'kJwxouHb0UCaLkZxcXXc8ZrUUmho1P8OCM6WmW4t';
 // API endpoint and key for ElevenLabs
-const elevenLabsApiKey = '09e0412b622854547349881601b64986';
+const elevenLabsApiKey = 'd86fcea048b77c31dbfbb9ad37e2a331';
 const elevenLabsTtsEndpoint = 'https://api.eleven-labs.com/v1/tts';
 
 document.getElementById("speakButton").addEventListener("click", function () {
@@ -195,11 +195,11 @@ async function cohereGeneratePrompt(sentence) {
 //IA Lettura testo
 async function speak(generatedText) {
   const text = generatedText;
-  const voiceId = "J6DuqjphI7ZCaNUBAos2";
+  const voiceId = "0xGfbfTuAfj8JSR2Leff";
 
   const headers = new Headers();
   headers.append("Accept", "audio/mpeg");
-  headers.append("xi-api-key", "09e0412b622854547349881601b64986");
+  headers.append("xi-api-key", "d86fcea048b77c31dbfbb9ad37e2a331");
   headers.append("Content-Type", "application/json");
 
   const body = JSON.stringify({
