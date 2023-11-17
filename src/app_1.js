@@ -5,23 +5,9 @@ const COHERE_KEY = 'kJwxouHb0UCaLkZxcXXc8ZrUUmho1P8OCM6WmW4t';
 const elevenLabsApiKey = '09e0412b622854547349881601b64986';
 const elevenLabsTtsEndpoint = 'https://api.eleven-labs.com/v1/tts';
 
-navigator.mediaDevices.getUserMedia({ audio: true })
-    .then(function (stream) {
-        // L'utente ha dato il permesso, puoi ora riprodurre l'audio
-    })
-    .catch(function (err) {
-        console.error('Errore nel richiedere il permesso audio:', err);
-    });
-
-    const express = require('express');
-const app = express();
-
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*'); // Consenti a tutti i domini di accedere all'audio
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    next();
+document.getElementById("speakButton").addEventListener("click", function () {
+  speak(generatedText);
 });
-
 
 let temp = "";
 
