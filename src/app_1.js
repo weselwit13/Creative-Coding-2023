@@ -38,6 +38,10 @@ function changeColor(genere) {
   let new_dominante_color;
   let new_second_color;
 
+  const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+  const msAppNavColorMeta = document.querySelector('meta[name="msapplication-navbutton-color"]');
+  const appleStatusBarMeta = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
+
   // Switch case per gestire diversi generi
   switch (genere) {
     case 'DETECTIVE':
@@ -89,6 +93,11 @@ function changeColor(genere) {
   // Cambia il valore della variabile CSS
   document.documentElement.style.setProperty('--dominant_color', new_dominante_color);
   document.documentElement.style.setProperty('--second_color', new_second_color);
+  
+  // Cambia il colore del tema quando si clicca su button5
+  themeColorMeta.setAttribute('content', new_dominante_color);
+  msAppNavColorMeta.setAttribute('content',  new_dominante_color);
+  appleStatusBarMeta.setAttribute('content',  new_dominante_color);
 
 }
 
