@@ -2,18 +2,14 @@
 const cohereUrl = 'https://api.cohere.ai/v1/generate';
 const COHERE_KEY = 'kJwxouHb0UCaLkZxcXXc8ZrUUmho1P8OCM6WmW4t';
 // API endpoint and key for ElevenLabs
-const elevenLabsApiKey = 'd86fcea048b77c31dbfbb9ad37e2a331';
+const elevenLabsApiKey = '34fc4582666d7cb5b0ddde43197d34b1';
 const elevenLabsTtsEndpoint = 'https://api.eleven-labs.com/v1/tts';
-
-document.getElementById("button").addEventListener("click", function () {
-  speak(generatedText.textContent);
-});
-
+let chatHistory = [];
 let temp = "";
 
 let anim = true;
 
-let generatedText = document.getElementById("generatedText")
+let generatedText = document.getElementById("generatedText");
 
 //bottoni genere storia
 let genere;
@@ -21,16 +17,81 @@ let bottoniArray = document.getElementsByClassName("button gen");
 Array.from(bottoniArray).forEach(tipo => {
   tipo.addEventListener("click", function () {
     // Toggle the "clicked" class on the clicked button
+
+    Array.from(bottoniArray).forEach(_tipo => {
+      _tipo.classList.remove("clicked");
+    });
     tipo.classList.toggle("clicked");
 
     // Update the genere variable with the button's innerHTML
     genere = tipo.innerHTML;
     console.log(genere);
+    changeColor(genere);
 
     // Log the classList for debugging
     console.log(tipo.classList);
   });
 });
+
+//cambio colori
+function changeColor(genere) {
+  let new_dominante_color;
+  let new_second_color;
+
+  // Switch case per gestire diversi generi
+  switch (genere) {
+    case 'DETECTIVE':
+      new_dominante_color = '#1E1E1E';
+      new_second_color = '#FFD700'; // Cambia il colore per il caso detective
+      break;
+    case 'ROMANCE':
+      new_dominante_color = '#FFB6C1';
+      new_second_color = '#800000'; // Cambia il colore per il caso romance
+      break;
+    case 'THRILLER':
+      new_dominante_color = '#B22222';
+      new_second_color = '#FFFFFF'; // Cambia il colore per il caso thriller
+      break;
+    case 'HORROR':
+      new_dominante_color = '#000000';
+      new_second_color = '#FFFFFF'; // Cambia il colore per il caso horror
+      break;
+    case 'NOVEL':
+      new_dominante_color = '#FFF5E1';
+      new_second_color = '#333333'; // Cambia il colore per il caso novel
+      break;
+    case 'ADVENTURE':
+      new_dominante_color = '#006400';
+      new_second_color = '#FFD700'; // Cambia il colore per il caso adventure
+      break;
+    case 'FANTASY':
+      new_dominante_color = '#B0C4DE';
+      new_second_color = '#8A2BE2'; // Cambia il colore per il caso fantasy
+      break;
+    case 'MISTERY':
+      new_dominante_color = '#191970';
+      new_second_color = '#708090'; // Cambia il colore per il caso mistery
+      break;
+    case 'DYSTOPIAN':
+      new_dominante_color = '#787878';
+      new_second_color = '#BFFF00'; // Cambia il colore per il caso dystopian
+      break;
+    case 'DRAMA':
+        new_dominante_color = '#800000';
+        new_second_color = '#FFD700'; // Cambia il colore per il caso drama
+        break;
+    default:
+      new_dominante_color = '#FFCE32';
+      new_second_color = '#37366F'; // Colore predefinito
+      break;
+  }
+
+  // Cambia il valore della variabile CSS
+  document.documentElement.style.setProperty('--dominant_color', new_dominante_color);
+  document.documentElement.style.setProperty('--second_color', new_second_color);
+
+}
+
 
 //selezione anno
 let yearSlider = document.getElementById("year");
@@ -54,7 +115,7 @@ close.addEventListener("click", () => {
 
 const loadingDots = document.getElementById('loadingDots');
 
-let intervalId; 
+let intervalId;
 const dots = document.querySelectorAll('.dot');
 
 // Funzione per animare i puntini
@@ -63,7 +124,7 @@ function animateDots() {
     function toggleDots() {
       dots.forEach(dot => dot.classList.toggle('active'));
     }
-  
+
     intervalId = setInterval(toggleDots, 1500);
 
   } else {
@@ -113,7 +174,7 @@ async function getCurrentLocation() {
         // Aggiorna il testo generato nel documento HTML
         document.getElementById("generatedText").textContent = generatedText;
         // Leggi il testo generato ad alta voce con ElevenLabs TTS
-        speak(generatedText);
+        // speak(generatedText);
 
       } catch (error) {
         console.error("Errore nella richiesta di geocodifica:", error);
@@ -193,14 +254,14 @@ async function cohereGeneratePrompt(sentence) {
 }
 
 //IA Lettura testo
-async function speak(generatedText) {
-  const text = generatedText;
-  console.log(text);
-  const voiceId = "0xGfbfTuAfj8JSR2Leff";
+async function speak() {
+  const text = generatedText.textContent;
+  console.log("Text to be spooken: ", text);
+  const voiceId = "n4b12Z8hgAqS2uUgEsbv";
 
   const headers = new Headers();
   headers.append("Accept", "audio/mpeg");
-  headers.append("xi-api-key", "d86fcea048b77c31dbfbb9ad37e2a331");
+  headers.append("xi-api-key", elevenLabsApiKey);
   headers.append("Content-Type", "application/json");
 
   const body = JSON.stringify({
@@ -229,7 +290,6 @@ async function speak(generatedText) {
     const blob = await response.blob();
     const url = window.URL.createObjectURL(blob);
     const audio = new Audio(url);
-    audio.current.playsInline = true;
     audio.play();
     audio.onended = () => {
       // Handle completion if needed
@@ -239,7 +299,7 @@ async function speak(generatedText) {
   }
 }
 
-// Funzione per CONTINUARE LA STIORIA
+// Funzione per CONTINUARE LA STORIA
 async function nextChapter() {
 
   detail.classList.add("active")
@@ -289,7 +349,7 @@ async function nextChapter() {
         // Aggiorna il testo generato nel documento HTML
         document.getElementById("generatedText").textContent = generatedText;
         // Leggi il testo generato ad alta voce con ElevenLabs TTS
-        speak(generatedText);
+        // speak(generatedText);
 
       } catch (error) {
         console.error("Errore nella richiesta di geocodifica:", error);
@@ -349,7 +409,7 @@ async function finishStory() {
         // Aggiorna il testo generato nel documento HTML
         document.getElementById("generatedText").textContent = generatedText;
         // Leggi il testo generato ad alta voce con ElevenLabs TTS
-        speak(generatedText);
+        // speak(generatedText);
 
       } catch (error) {
         console.error("Errore nella richiesta di geocodifica:", error);

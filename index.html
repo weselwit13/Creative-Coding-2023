@@ -16,7 +16,6 @@
 <body id="body">
     <div id="detail""><button id="close">close</button>
         <div id="h1">Your story begins</div>
-        <button id="button">Speak</button>
 
         <div class="loadingDots">
             <span class="dot" id="dot1"></span>
@@ -25,8 +24,16 @@
         </div>
 
         <div id="generatedText"></div>
-        <span id="button4" onclick="nextChapter()">NEXT CHAPTER</span>
-        <span id="button3" onclick="finishStory()">FINISH STORY</span>
+
+        <div id="buttonGroup">
+
+            <span id="button5" onclick="speak()">speak</span>
+
+            <div id="buttonContainer">
+                <span id="button4" onclick="nextChapter()">NEXT CHAPTER</span>
+                <span id="button3" onclick="finishStory()">FINISH STORY</span>
+            </div>  
+        </div>
     </div>
     <h2 id="h2">
         WalkStory
@@ -37,7 +44,7 @@
     </h1>
     <div id="flex">
         TELL ME A
-        <span class="button gen">DETECTIVE</span>
+        <span class="button gen" style="margin-left: 10px;">DETECTIVE</span>
         <span class="button gen">ROMANCE</span>
         <span class="button gen">THRILLER</span>
         <span class="button gen">HORROR</span>
@@ -45,7 +52,7 @@
         <span class="button gen">ADVENTURE</span>
         <span class="button gen">FANTASY</span>
         <span class="button gen">MISTERY</span>
-        <span class="button gen">DISTOPIC</span>
+        <span class="button gen">DYSTOPIAN</span>
         <span class="button gen">DRAMA</span>
     </div>
     <div id="flex">
