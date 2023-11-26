@@ -2,7 +2,7 @@
 const cohereUrl = 'https://api.cohere.ai/v1/generate';
 const COHERE_KEY = '5DWdZBaMIzz5xHS6MnyjkNLKdXcLHUXKtCtJnUTu';
 // API endpoint and key for ElevenLabs
-const elevenLabsApiKey = '840609caeb0b8c68de42dea7d8ac9147';
+const elevenLabsApiKey = 'a9c5530635dfc9c896ef4d786abfcbfa';
 const elevenLabsTtsEndpoint = 'https://api.eleven-labs.com/v1/tts';
 let chatHistory = [];
 let temp = "";
@@ -266,7 +266,7 @@ async function cohereGeneratePrompt(sentence) {
 async function speak() {
   const text = generatedText.textContent;
   console.log("Text to be spooken: ", text);
-  const voiceId = "W06aUZcRdzB6JLJVAzeT";
+  const voiceId = "Jyhx0lFN2NX05WDi7xDc";
 
   const headers = new Headers();
   headers.append("Accept", "audio/mpeg");
